@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'rooms')}">
+
+  <body>
+
+    <h2>Room List</h2>
+
+    
+    <form th:action="@{/rooms}">
+      Search: <input type="text" name="keyword" id="keyword" size="50" th:value="${matrik}" required />
+      &nbsp;
+      <input type="submit" value="Search" />
+      &nbsp;
+    </form>
+
+    
+
+  
+
+
+
+    <table id="rooms" class="table table-striped">
+        <thead>
+        <tr>
+            <th style="width: 100px;">Student Name</th>
+            <th style="width: 100px;">No Matrik</th>
+            <th style="width: 100px;">Email</th>
+            <th style="width: 100px;">Block</th>
+            <th style="width: 100px">Room Number</th>
+            <th style="width: 50px"></th>
+            <th style="width: 50px"></th>
+             <!---- ><th>Pets</th></td> -->
+        </tr>
+        </thead>
+        <tbody>
+          <tr th:each="room : ${rooms}">
+              <td>
+                <!--@{/rooms/__${room.id}__}-->
+                  <a th:href="@{/rooms/__${room.id}__}" th:text="${room.name}"/></a>
+              </td>
+              <td th:text="${room.matrik}"/>
+              <td th:text="${room.email}"/>
+              <td th:text="${room.block}"/>
+              <td th:text="${room.roomno}"/>
+              <td><a th:href="@{rooms/{id}/edit(id=${room.id})}">Edit</a><td>
+              <td><a th:href="@{/delete/{id}(id=${room.id})}">Delete</a></td>
+             <!---- > <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td> -->
+          </tr>
+        </tbody>
+    </table>
+
+  </body>
+</html>
