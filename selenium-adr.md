@@ -16,7 +16,7 @@ The framework should be able to run in other operating systems such as Linux, as
  
 **Decision**
 
-Use Selenium as the base framework for the automation and create a Python library that can be easily installed via pip. 
+Use Selenium as the base framework for the automation to create components that user can drag and drop. 
 
 **Consequences**
 
