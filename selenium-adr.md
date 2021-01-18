@@ -1,4 +1,4 @@
-#1. Selenium for XpressAI Automation
+# 1. Selenium for XpressAI Automation
 
 **Date:** 18-01-2021
 
